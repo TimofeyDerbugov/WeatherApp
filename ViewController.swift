@@ -18,6 +18,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .darkGray
         
+        tempView.frame = CGRect(x: (view.frame.size.width / 2 - 100), y: 70, width: 200, height: 160)
+        tempView.backgroundColor = UIColor(red: 0.53, green: 0.25, blue: 0.62, alpha: 1.0)
+        tempView.layer.cornerRadius = 20
+        tempView.layer.borderWidth = 2
+        tempView.layer.borderColor = UIColor.black.cgColor
+        
         tempLabel.frame = CGRect(x: (view.frame.size.width / 2 - 100), y: 50, width: 200, height: 200)
         tempLabel.text = "--°"
         tempLabel.font = UIFont.systemFont(ofSize: 40)
@@ -33,7 +39,7 @@ class ViewController: UIViewController {
         updateTapButton.addTarget(self, action: #selector(UPDaTe), for: .touchUpInside)
         updateTapButton.layer.cornerRadius = 20
         
-    
+        view.addSubview(tempView)
         view.addSubview(updateTapButton)
         view.addSubview(iconWeather)
         view.addSubview(tempLabel)
